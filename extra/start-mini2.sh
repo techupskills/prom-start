@@ -8,7 +8,8 @@ sudo curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/m
 sudo chmod +x minikube && \ 
 sudo cp minikube /usr/local/bin/ && \ 
 sudo rm minikube && \  
-minikube start --feature-gates=EphemeralContainers=true &&\
+minikube start --feature-gates=EphemeralContainers=true --extra-config=apiserver.GenericServerRunOptions.AdmissionControl=NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,ResourceQuota,DefaultTolerationSeconds,PodSecurityPolicy && \
+
 
 # Enabling addons: ingress, dashboard
 minikube addons enable ingress && \
