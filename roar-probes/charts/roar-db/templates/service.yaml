@@ -14,6 +14,6 @@ spec:
     port: {{ .Values.service.internalPort }}
     targetPort: {{ .Values.service.externalPort }}
   selector:
-    app: {{ template "roar-db.name" . }}
+    name: roar-db
      
 
