@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: quay.io/bclaster/roar-web
+  repository: quay.io/techupskills/roar-web
   tag: 1.10.1
   pullPolicy: Always
 deployment:

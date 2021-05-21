@@ -1,0 +1,9 @@
+FROM tomcat:7.0.65-jre7
+
+ARG warFile
+
+COPY $warFile $CATALINA_HOME/webapps/roar.war
+
+COPY web-bad.xml $CATALINA_HOME/webapps/roar/WEB-INF/web.xml
+
+CMD ["catalina.sh", "run"]

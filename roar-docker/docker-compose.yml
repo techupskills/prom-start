@@ -1,11 +1,11 @@
 roar-web-container:
-    image: roar-web
+    image: quay.io/techupskills/roar-web:1.0.1
     ports:
         - "8089:8080"
     links:
         - "roar-db-container:mysql"
 roar-db-container:
-    image: roar-db
+    image: quay.io/techupskills/roar-db:1.0.1
     ports:
         - "3308:3306"
     environment:
