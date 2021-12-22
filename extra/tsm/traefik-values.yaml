@@ -1,0 +1,22 @@
+additionalArguments:
+  - "--metrics.prometheus=true"
+service:
+  type: NodePort
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      nodePort: 32080 
+    - name: https
+      port: 443
+      targetPort: https
+      nodePort: 32443
+    - name: traefik
+      port: 9000
+      targetPort: traefik
+      nodePort: 31900
+    - name: metrics
+      port: 9100
+      targetPort: metrics
+      nodePort: 31910
+
