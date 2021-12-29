@@ -18,7 +18,7 @@ data:
     - job_name: traefik
       static_configs:
       - targets:
-        - traefik-prometheus.traefik.svc.cluster.local:9100
+        - traefik.traefik.svc.cluster.local:9100
     - job_name: prometheus
       static_configs:
       - targets:
@@ -320,18 +320,14 @@ data:
     {}
 kind: ConfigMap
 metadata:
-  annotations:
-    meta.helm.sh/release-name: prom-com
-    meta.helm.sh/release-namespace: monitor
-  creationTimestamp: "2021-12-24T04:42:57Z"
   labels:
     app: prometheus
     app.kubernetes.io/managed-by: Helm
     chart: prometheus-15.0.2
     component: server
     heritage: Helm
-    release: prom-com
-  name: prom-com-prometheus-server
-  namespace: monitor
-  resourceVersion: "183120"
-  uid: a946b5cd-ddc8-4a97-8a4f-fbb880c82eca
+    release: pc
+  name: pc-prometheus-server
+  namespace: monitoring
+
+
