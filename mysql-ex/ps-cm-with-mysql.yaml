@@ -22,7 +22,7 @@ data:
     - job_name: mysql
       static_configs:
       - targets:
-        - mysql-exporter-prometheus-mysql-exporter.monitor.svc.cluster.local:9104
+        - mysql-exporter-prometheus-mysql-exporter.monitoring.svc.cluster.local:9104
     - job_name: prometheus
       static_configs:
       - targets:
@@ -304,7 +304,7 @@ data:
         bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
         relabel_configs:
         - source_labels: [__meta_kubernetes_namespace]
-          regex: monitor
+          regex: monitoring
           action: keep
         - source_labels: [__meta_kubernetes_pod_label_app]
           regex: prometheus
